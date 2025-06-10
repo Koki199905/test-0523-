@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>ToDoアプリ</title>
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css'>
-<link rel='stylesheet' href='https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
 <!-- Vueで指定された"app"要素、この中でのみVueが有効 -->
 <div id="app">
   <v-app>
@@ -21,24 +9,20 @@
           >
           My ToDo App
         </v-row>
-    <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          sm="6"
-          md="3"
-        >
+        <v-row
+          class="mb-3 mt-3"
+          align="center"
+          justify="center"
+          >
+          <v-col 
+            cols="6"            
+            >
           <v-text-field
-            label="タスクを入力"
-            placeholder="タスクを入力…"            
+            label="ここに入力"
+            placeholder="ここに入力…"
           ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          sm="6"
-          md="3"
-        >
+          </v-col>
+        </v-row>
         <v-row
           class="mb-3 mt-3"
           align="center"
@@ -46,13 +30,14 @@
           >
           タスク内容：{{ task }}
           <v-btn v-on:click="addTask"
+               class="mx-2"
                fab
                dark
                small               
-               color="indigo"
+               color="cyan"
                >
                  <v-icon dark>
-                   mdi-plus
+                   mdi-pencil
                  </v-icon>
                </v-btn>
         </v-row>
@@ -61,7 +46,7 @@
           justify="center"
           > 
           <v-btn v-on:click="clearAll"
-                 
+                 color="blue"
                  rounded
                  >全てのToDoをクリア</v-btn>
         </v-row>
@@ -75,9 +60,3 @@
     </v-content>
   </v-app>
 </div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'></script><script  src="./script.js"></script>
-
-</body>
-</html>
